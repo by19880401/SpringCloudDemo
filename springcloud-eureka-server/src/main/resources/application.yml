@@ -5,7 +5,7 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #其实就是：http://localhost:8700/
     register-with-eureka: false #注册中心自己不在向eureka注册（即自己不注册自己）
     fetch-registry: false #表示启动时，自己不从Eureka服务中获取注册信息
 
