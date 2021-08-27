@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "product-service") //这里的value值是指product-service服务里application.yml里配置的spring.application.name的值（即将要调用的服务名称）
 public interface IProductService {
     /**
-     * 根据ID获取产品信息
+     * 根据ID获取产品信息，无反馈值void
+     *
      * @param productId
      * @return
      */

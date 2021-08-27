@@ -46,6 +46,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <!--引入json依赖，支持json序列化及反序列化-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-json</artifactId>
+    </dependency>
   </dependencies>
 
   <!--指定下载源和使用SpringCloud的版本-->

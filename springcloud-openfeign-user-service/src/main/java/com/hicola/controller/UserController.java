@@ -4,9 +4,10 @@ import com.hicola.rpc.IProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 用户服务
@@ -33,5 +34,15 @@ public class UserController {
         logger.info("UserController::findUserAndProductById");
         String productId = "123456";
         productService.findProductById(productId);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/findUserInfo", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public Object findUserInfo(@RequestParam("userId") String userId) {
+        logger.info("UserController::findUserInfo, userId: {}", userId);
+        Map<String, Object> result = new HashMap<>();
+        result.put("ResultCode", "00000");
+        result.put("ResultMsg", "success");
+        return result;
     }
 }
