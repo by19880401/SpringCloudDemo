@@ -1,0 +1,11 @@
+server:
+  port: 8701
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8700/eureka/ #其实就是：http://localhost:8700/
+  instance:
+    hostname: localhost
+spring:
+  application:
+    name: product-service
