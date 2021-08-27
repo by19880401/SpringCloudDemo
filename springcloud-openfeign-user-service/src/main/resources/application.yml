@@ -1,5 +1,7 @@
+#自定义端口
 server:
-  port: 8701
+  port: 8702
+#eureka注册中心配置
 eureka:
   client:
     service-url:
@@ -10,7 +12,7 @@ eureka:
 
 spring:
   application:
-    name: product-service
+    name: user-service #web应用服务名称
 
 
 #日志配置

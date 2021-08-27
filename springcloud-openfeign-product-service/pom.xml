@@ -59,6 +59,7 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--以下配置为IDEA自动生成，不需要改动-->
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
