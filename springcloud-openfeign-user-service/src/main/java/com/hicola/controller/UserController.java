@@ -1,12 +1,16 @@
 package com.hicola.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.hicola.rpc.IProductService;
+import com.hicola.util.ResponseUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -44,5 +48,17 @@ public class UserController {
         result.put("ResultCode", "00000");
         result.put("ResultMsg", "success");
         return result;
+    }
+
+    @RequestMapping(value = "/findUserInfoAsJson", method = RequestMethod.POST)
+    public Object findUserInfoAsJson(@RequestParam("userId") String userId) throws JsonProcessingException {
+        try {
+            logger.info("UserController::findUserInfoAsJson, userId: {}", userId);
+            List<String> list = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+            return ResponseUtils.responseSuccessObject(list);
+        } catch (Exception e) {
+            logger.warn("查询用户信息失败", e);
+            return ResponseUtils.responseFailed("查询用户信息失败", e.getMessage());
+        }
     }
 }

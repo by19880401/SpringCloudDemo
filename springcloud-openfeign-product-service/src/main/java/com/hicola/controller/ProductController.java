@@ -40,4 +40,14 @@ public class ProductController {
         logger.info("Result:{}", resObj.toString());
         return resObj;
     }
+
+    @RequestMapping(value = "/findUserInfoAsJson", method = RequestMethod.POST)
+    public Object findUserInfoAsJson() {
+        String userId = "999999999";
+        logger.info("ProductController::findUserInfoAsJson, userId:{}", userId);
+        Object resObj = userService.findUserInfoAsJsonFormat(userId);
+        logger.info("Result:{}", resObj.toString());
+        return resObj;
+    }
+
 }

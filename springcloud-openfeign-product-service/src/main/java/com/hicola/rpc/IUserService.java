@@ -20,4 +20,7 @@ public interface IUserService {
      */
     @RequestMapping(value = "/user-api/findUserInfo", method = RequestMethod.POST)
     Object findUserInfo(@RequestParam("userId") String userId);
+
+    @RequestMapping(value = "/user-api/findUserInfoAsJson", method = RequestMethod.GET)
+    Object findUserInfoAsJsonFormat(@RequestParam("userId") String userId);
 }
