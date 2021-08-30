@@ -50,7 +50,7 @@ public class UserController {
         return result;
     }
 
-    @RequestMapping(value = "/findUserInfoAsJson", method = RequestMethod.POST)
+    @RequestMapping(value = "/findUserInfoAsJson", method = RequestMethod.GET)
     public Object findUserInfoAsJson(@RequestParam("userId") String userId) throws JsonProcessingException {
         try {
             logger.info("UserController::findUserInfoAsJson, userId: {}", userId);

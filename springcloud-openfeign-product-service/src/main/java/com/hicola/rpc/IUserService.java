@@ -22,5 +22,8 @@ public interface IUserService {
     Object findUserInfo(@RequestParam("userId") String userId);
 
     @RequestMapping(value = "/user-api/findUserInfoAsJson", method = RequestMethod.GET)
-    Object findUserInfoAsJsonFormat(@RequestParam("userId") String userId);
+    Object findUserInfoAsJsonData1(@RequestParam("userId") String userId);
+
+    @RequestMapping(value = "/user-api/findUserInfoAsJson", method = RequestMethod.GET)
+    String findUserInfoAsJsonData2(@RequestParam("userId") String userId);//对于feign接口，返回全部为string，在接受端转换为你需要的具体类型
 }
