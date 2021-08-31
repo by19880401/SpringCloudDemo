@@ -1,6 +1,5 @@
 package com.hicola.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hicola.rpc.IUserService;
@@ -61,7 +60,7 @@ public class ProductController {
         String userId = "999999999";
         logger.info("ProductController::findUserInfoAsJson, userId:{}", userId);
         Object resObj = userService.findUserInfoAsJsonData1(userId);
-        RequestMessage msg = ResponseConvertUtil.INSTANCE.convertValue(resObj, RequestMessage.class);//方式一
+        RequestMessage msg = ResponseConvertUtil.INSTANCE.convertValue(resObj, RequestMessage.class);//方式一，顺利将object类型响应信息转为对象
         logger.info("Result:{}", msg.toString());
         return resObj;
     }
@@ -73,9 +72,8 @@ public class ProductController {
             String userId = "999999999";
             logger.info("ProductController::findUserInfoAsJson, userId:{}", userId);
             String userInfoRes = userService.findUserInfoAsJsonData2(userId);
-            /*msg = objectMapper.convertValue(userInfoRes,RequestMessage.class);*/
-            msg = objectMapper.readValue(userInfoRes, new TypeReference<RequestMessage>() {});//方式二
-        } catch (JsonProcessingException e) {
+            msg = objectMapper.readValue(userInfoRes, new TypeReference<RequestMessage>() {});//方式二,顺利将string类型的响应信息转为对象
+        } catch (Exception e) {
             logger.warn("ProductController::findUserInfoAsJson2 Error", e.getMessage());
         }
         logger.info("Result:{}", msg.toString());
