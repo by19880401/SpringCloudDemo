@@ -49,6 +49,13 @@ public class ProductController {
         return resObj;
     }
 
+    /**
+     * 通过openFeign接口调用返回响应消息时，一般会返回Object类型的json对象
+     * 此时在接口调用端（接受端）需要转换一下
+     * 目前我了解到的有下面两种方式：方式一和方式二
+     *
+     * @return
+     */
     @RequestMapping(value = "/findUserInfoAsJson1", method = RequestMethod.POST)
     public Object findUserInfoAsJson1() {
         String userId = "999999999";
