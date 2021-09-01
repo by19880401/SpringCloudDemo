@@ -15,12 +15,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
+        <spring.cloud-version>Hoxton.SR12</spring.cloud-version>
         <type>pom</type>
         <scope>import</scope>
     </properties>
 
-    <!--引入springboot-parent父项目-->
+    <!--引入springboot-parent父项目，-->
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
@@ -28,11 +28,11 @@
     </parent>
 
     <dependencies>
-        <!--引入springcloud的euekea server依赖，此处一定要指定netflix-eureka-server的版本号，否则无法下载依赖-->
+        <!--引入springcloud的euekea server依赖，此处可能会要求指定netflix-eureka-server的版本号，否则无法下载依赖；但正常情况下，作为起步依赖是不需要指定版本号的-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <version>2.2.9.RELEASE</version>
+            <!--<version>2.2.9.RELEASE</version>-->
         </dependency>
     </dependencies>
 

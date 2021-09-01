@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
+    <spring.cloud-version>Hoxton.SR12</spring.cloud-version>
     <type>pom</type>
     <scope>import</scope>
   </properties>
@@ -29,17 +29,17 @@
   </parent>
 
   <dependencies>
-    <!--引入springcloud的euekea client依赖，指明它是一个euekea client-->
+    <!--引入springcloud的euekea client依赖，指明它是一个euekea client；作为起步依赖，不需要指定版本号-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-      <version>2.2.9.RELEASE</version>
+      <!--<version>2.2.9.RELEASE</version>-->
     </dependency>
     <!--引入openFeign依赖,只要用到openFeign，就需要加上此依赖-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-openfeign</artifactId>
-      <version>2.2.9.RELEASE</version>
+      <!--<version>2.2.9.RELEASE</version>-->
     </dependency>
     <!--引入web依赖，因为这是一个web应用，这个依赖是必须的-->
     <dependency>
